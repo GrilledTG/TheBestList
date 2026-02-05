@@ -10,5 +10,11 @@
     "device": "All",
     "fps": "100",
     "records": [
+        { 
+        "user": "LightningGD",
+        "link": "https://youtu.be/UM7Ygg3eYIQ",
+        "hz": 100,
+        "percent": 100
+        }
     ]
 }
