@@ -1,0 +1,20 @@
+{
+    "id": 132727445,
+    "name": "triple legendary pal (LIP)",
+    "author": "Clawbuckle",
+    "creators": ["JeDoesStuff", "Clawbuckle"],
+    "verifier": "Clawbuckle",
+    "verification": "https://youtu.be/CoG_BEg2KgE",
+    "percentToQualify": "100",
+    "handcam": 0,
+    "device": "All",
+    "fps": "60",
+    "records": [
+      {
+        "user": "AngoPR",
+        "link": "https://youtu.be/AwHG7BPs92I?si=g_fYPI5eW_rd16II",
+        "hz": 60,
+        "percent": 100
+      }
+    ]
+}
