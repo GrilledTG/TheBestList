@@ -10,5 +10,11 @@
     "device": "All, devices with a 22.2cps cap or higher",
     "fps": "60",
     "records": [
+        {
+            "user": "F1erzza",
+            "link": "https://www.youtube.com/watch?v=ZNF0YyM2qZ0",
+            "hz": "60",
+            "percent": 100
+        }
     ]
 }
