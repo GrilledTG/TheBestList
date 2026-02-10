@@ -10,5 +10,11 @@
     "device": "All",
     "fps": "CBF",
     "records": [
+        {
+        "user": "PaperGuy",
+        "link": "https://youtu.be/kUOk188v-r4?si=9ylaMhKpMRl8jWVB",
+        "hz": "CBF",
+        "percent": 100
+        }
     ]
 }
