@@ -3,12 +3,18 @@
     "name": "GARBANZO",
     "author": "Needless",
     "creators": [],
-    "verifier": "PaperGuy",
-    "verification": "https://youtu.be/5gBToK4sOFE",
+    "verifier": "pixelfactorial",
+    "verification": "youtube.com/watch?v=Ka02RNxlj1c",
     "percentToQualify": "100",
     "handcam": 0,
     "device": "Uncapped",
     "fps": "CBF",
     "records": [
+        {
+            "user": "PaperGuy",
+      "link": "https://youtu.be/5gBToK4sOFE",
+      "hz": "CBF",
+      "percent": 100
+        }
     ]
 }
