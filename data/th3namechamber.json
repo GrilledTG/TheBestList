@@ -10,5 +10,10 @@
     "device": "Any",
     "fps": "60",
     "records": [
+        { "user": "OmorGD",
+        "link": "https://www.youtube.com/watch?v=QwTJ-RRCWyM",
+        "hz": 60,
+        "percent": 100
+        }
     ]
 }
