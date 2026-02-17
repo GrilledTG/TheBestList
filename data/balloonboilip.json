@@ -10,5 +10,11 @@
     "device": "All",
     "fps": "60",
     "records": [
+        {
+            "user": "GMDMIRROR",
+            "link": "https://youtu.be/7zM4v38vdJY",
+            "hz": "60",
+            "percent": 100
+        }
     ]
 }
