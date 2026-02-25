@@ -10,5 +10,11 @@
     "device": "Uncapped",
     "fps": "60",
     "records": [
+        {
+            "user": "LightningGD",
+            "link": "https://youtu.be/CH2_LJ7JZLg?t=196",
+            "hz": "60",
+            "percent": 100
+        }
     ]
 }
