@@ -10,5 +10,11 @@
     "device": "All",
     "fps": "60",
     "records": [
+        {
+        "user": "SmokeyZZZ",
+        "link": "https://www.youtube.com/watch?v=KlZHfA65MmE",
+        "hz": 60,
+        "percent": 100
+        }
     ]
 }
