@@ -10,5 +10,11 @@
     "device": "All",
     "fps": "120",
     "records": [
+        {
+            "user": "F1erzza",
+            "link": "https://youtu.be/7h1ZTSQ8Xuw",
+            "hz": "120",
+            "percent": 100
+        }
     ]
 }
