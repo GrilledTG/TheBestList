@@ -10,5 +10,11 @@
     "device": "All",
     "fps": "CBF",
     "records": [
+        {
+            "user": "F1erzza",
+            "link": "https://youtu.be/YoUdo4KbSlw",
+            "hz": "CBF",
+            "percent": 100
+        }
     ]
 }
