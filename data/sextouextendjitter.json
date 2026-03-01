@@ -10,5 +10,11 @@
     "device": "All",
     "fps": "60",
     "records": [
+        {
+            "user": "Soli",
+            "link": "https://youtu.be/PeDSZ_RG7gA",
+            "hz": "60",
+            "percent": 100
+        }
     ]
 }
