@@ -10,5 +10,11 @@
     "device": "All",
     "fps": "CBF",
     "records": [
+        {
+            "user": "Liknod",
+            "link": "https://youtu.be/tK7OaQE9zAk?si=oFm_seWBx2eEHz8Z",
+            "hz": "CBF",
+            "percent": 100
+        }
     ]
 }
