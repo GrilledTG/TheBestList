@@ -3,29 +3,18 @@
     "name": "Hyper Spam",
     "author": "9tn",
     "creators": [],
-    "verifier": "MM9000",
-    "verification": "https://youtu.be/R8LqVVWeGcg?si=SnST4ZiBAzEMAN8P&t=32",
+    "verifier": "Xnor",
+    "verification": "https://www.youtube.com/watch?v=UibYK8_Euk4",
     "percentToQualify": 100,
-    "handcam": 1,
-    "device": "G502/G512",
+    "handcam": 0,
+    "device": "Uncapped",
     "fps": "CBF",
     "records": [
         {
-      "user": "loooookkk",
+      "user": "aelzfr",
+        "link": "https://www.youtube.com/live/vUGkRhQkAoM?si=U5-0-KYocaJcn-Ne&t=1600",
       "hz": "CBF",
       "percent": 100
-      },
-        {
-      "user": "ywuChaos",
-    "link": "https://youtu.be/MVDrcMEzOhY?si=FJuJbDIHthlyqa5X&t=90",
-      "hz": "CBF",
-      "percent": 100
-      },
-        {
-            "user": "AllOnRed",
-            "link": "https://discord.com/channels/1268386437116465205/1268386862079283222/1476397397679804530",
-            "hz": "CBF",
-            "percent": 100
-        }
+      }
     ]
 }
