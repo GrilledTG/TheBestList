@@ -10,5 +10,10 @@
     "fps": "CBF",
     "device": "G502/G512",
     "records": [
+        {
+            "user": "galbeni7",
+            "hz": "CBF",
+            "percent": 100
+        }
     ]
 }
