@@ -1,0 +1,20 @@
+{
+    "id": 134905839,
+    "name": "The eye of rah",
+    "author": "AngoPR",
+    "creators": [],
+    "verifier": "AngoPR",
+    "verification": "https://youtu.be/abUJv2nFhHk",
+    "percentToQualify": "100",
+    "handcam": 0,
+    "device": "All",
+    "fps": "93",
+    "records": [
+      {
+        "user": "Xed",
+        "link": "https://www.youtube.com/shorts/qPdTHxD9wqA",
+        "hz": 93,
+        "percent": 100
+      }
+    ]
+}
