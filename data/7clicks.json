@@ -10,5 +10,11 @@
     "device": "All",
     "fps": "108",
     "records": [
+        {
+            "user": "F1erzza",
+            "link": "https://discord.com/channels/1268386437116465205/1268386862079283222/1479227988875939840",
+            "hz": "108",
+            "percent": 100
+        }
     ]
 }
