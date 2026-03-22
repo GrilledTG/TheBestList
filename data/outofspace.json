@@ -10,5 +10,11 @@
     "device": "All",
     "fps": "95",
     "records": [
+        {
+            "user": "GMDMIRROR",
+            "link": "https://www.youtube.com/shorts/mi_-35K4ja0",
+            "hz": "95",
+            "percent": 100
+        }
     ]
 }
