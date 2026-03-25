@@ -65,7 +65,7 @@ export default {
       return index >= 0 ? index + 1 : this.selected + 1;
     },
   },
-  async mounted() {
+ async mounted() {
     this.list = await fetchList();
     this.editors = await fetchEditors();
     if (!this.list) {
@@ -84,13 +84,13 @@ export default {
     }
     this.loading = false;
   },
-    template: `
-        <main v-if="loading">
-            <Spinner></Spinner>
-        </main>
-        <main v-else class="page-list">
-            <div class="list-container">
-            <!-- Search Bar -->
+  template: `
+    <main v-if="loading">
+      <Spinner></Spinner>
+    </main>
+    <main v-else class="page-list">
+      <div class="list-container">
+        <!-- Search Bar -->
         <div class="search-bar">
           <input type="text" v-model="searchQuery" placeholder="Search levels..." />
         </div>
@@ -113,21 +113,8 @@ export default {
         </table>
         <p v-if="filteredList.length === 0">No levels match your search.</p>
       </div>
-                <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list">
-                        <td class="rank">
-                            <p v-if="i + 1 <= 150" class="type-label-lg">#{{ i + 1 }}</p>
-                            <p v-else class="type-label-lg">Legacy</p>
-                        </td>
-                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-                            <button @click="selected = i">
-                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
-                            </button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="level-container">
+      <div class="level-container" v-if="selectedLevel">
+        <div class="level">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
