@@ -16,12 +16,103 @@ const roleIconMap = {
 
 export default {
     components: { Spinner, LevelAuthors },
+      data: () => ({
+    list: [],
+    editors: [],
+    loading: true,
+    selected: 0,
+    errors: [],
+    searchQuery: "",
+    roleIconMap,
+    store,
+  }),
+  computed: {
+    filteredList() {
+      if (!this.searchQuery) return this.list;
+      return this.list.filter(([level, err]) => {
+        if (!level || !level.name) return false;
+        return level.name.toLowerCase().includes(this.searchQuery.toLowerCase());
+      });
+    },
+    selectedLevel() {
+      return this.filteredList[this.selected]
+        ? this.filteredList[this.selected][0]
+        : null;
+    },
+    // Compute the original rank (index) in the full list for display purposes.
+    selectedIndexInFullList() {
+      if (!this.selectedLevel) return this.selected + 1;
+      return (
+        this.list.findIndex(
+          (item) => item[0] && item[0].id === this.selectedLevel.id
+        ) + 1
+      );
+    },
+  },
+  watch: {
+    // Reset the selected index when the search query changes.
+    searchQuery() {
+      this.selected = 0;
+    },
+  },
+  methods: {
+    embed,
+    score,
+    getOriginalRank(level) {
+      let index = this.list.findIndex(
+        (item) => item[0] && item[0].id === level.id
+      );
+      return index >= 0 ? index + 1 : this.selected + 1;
+    },
+  },
+  async mounted() {
+    this.list = await fetchList();
+    this.editors = await fetchEditors();
+    if (!this.list) {
+      this.errors = [
+        "Failed to load list. Retry in a few minutes or notify list staff.",
+      ];
+    } else {
+      this.errors.push(
+        ...this.list
+          .filter(([_, err]) => err)
+          .map(([_, err]) => `Failed to load level. (${err}.json)`)
+      );
+      if (!this.editors) {
+        this.errors.push("Failed to load list editors.");
+      }
+    }
+    this.loading = false;
+  },
     template: `
         <main v-if="loading">
             <Spinner></Spinner>
         </main>
         <main v-else class="page-list">
             <div class="list-container">
+            <!-- Search Bar -->
+        <div class="search-bar">
+          <input type="text" v-model="searchQuery" placeholder="Search levels..." />
+        </div>
+        <table class="list" v-if="filteredList.length">
+          <tr v-for="(item, i) in filteredList" :key="i">
+            <td class="rank">
+              <p v-if="getOriginalRank(item[0]) <= 200" class="type-label-lg">
+                #{{ getOriginalRank(item[0]) }}
+              </p>
+              <p v-else class="type-label-lg">Legacy</p>
+            </td>
+            <td class="level" :class="{ 'active': selected === i, 'error': !item[0] }">
+              <button @click="selected = i">
+                <span class="type-label-lg">
+                  {{ item[0]?.name || \`Error (\${item[1]}.json)\` }}
+                </span>
+              </button>
+            </td>
+          </tr>
+        </table>
+        <p v-if="filteredList.length === 0">No levels match your search.</p>
+      </div>
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
                         <td class="rank">
