@@ -118,25 +118,25 @@ export default {
          <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points when completed</div>
-                            <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
+                            <p>{{ score(selected + 1, 100, selectedLevel.percentToQualify) }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">ID</div>
-                            <p>{{ level.id }}</p>
+                            <p>{{ selectedLevel.id }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">FPS</div>
-                            <p>{{ level.fps || 'Any' }}</p>
+                            <p>{{ selectedLevel.fps || 'Any' }}</p>
                         </li>
                     </ul>
                     <h2>Records</h2>
-                    <p v-if="selected + 1 <= 150"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
+                    <p v-if="selected + 1 <= 150"><strong>{{ selectedLevel.percentToQualify }}%</strong> or better to qualify</p>
                     <p v-else-if="selected +1 <= 150"><strong>100%</strong> or better to qualify</p>
                     <p v-else>This level does not accept new records.</p>
-                    <p><strong>Handcam is {{['not needed', 'recommended', 'necessary'][level.handcam]}} for this level.</strong></p>
-                    <p><strong>Device: {{level.device}}.</strong></p>
+                    <p><strong>Handcam is {{['not needed', 'recommended', 'necessary'][selectedLevel.handcam]}} for this level.</strong></p>
+                    <p><strong>Device: {{selectedLevel.device}}.</strong></p>
                     <table class="records">
-                        <tr v-for="record in level.records" class="record">
+                        <tr v-for="record in selectedLevel.records" class="record">
                             <td class="percent">
                                 <p>{{ record.percent }}%</p>
                             </td>
