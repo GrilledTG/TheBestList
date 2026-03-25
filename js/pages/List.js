@@ -2,21 +2,20 @@ import { store } from "../main.js";
 import { embed } from "../util.js";
 import { score } from "../score.js";
 import { fetchEditors, fetchList } from "../content.js";
-
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
 
 const roleIconMap = {
-    owner: "crown",
-    admin: "user-gear",
-    helper: "user-shield",
-    dev: "code",
-    trial: "user-lock",
+  owner: "crown",
+  admin: "user-gear",
+  helper: "user-shield",
+  dev: "code",
+  trial: "user-lock",
 };
 
 export default {
-    components: { Spinner, LevelAuthors },
-      data: () => ({
+  components: { Spinner, LevelAuthors },
+  data: () => ({
     list: [],
     editors: [],
     loading: true,
@@ -65,7 +64,7 @@ export default {
       return index >= 0 ? index + 1 : this.selected + 1;
     },
   },
- async mounted() {
+  async mounted() {
     this.list = await fetchList();
     this.editors = await fetchEditors();
     if (!this.list) {
@@ -115,12 +114,19 @@ export default {
       </div>
       <div class="level-container" v-if="selectedLevel">
         <div class="level">
-                <div class="level" v-if="level">
-                    <h1>{{ level.name }}</h1>
-                    <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
-                    <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
-                    <ul class="stats">
-                        <li>
+          <h1>{{ selectedLevel.name }}</h1>
+          <LevelAuthors :author="selectedLevel.author" :creators="selectedLevel.creators" :verifier="selectedLevel.verifier"></LevelAuthors>
+          <iframe class="video" id="videoframe" :src="embed(selectedLevel.showcase || selectedLevel.verification)" frameborder="0"></iframe>
+          <ul class="stats">
+            <li>
+              <div class="type-title-sm">Points when completed</div>
+              <p>
+                {{
+                  score(getOriginalRank(selectedLevel), 100, selectedLevel.percentToQualify)
+                }}
+              </p>
+            </li>
+            <li>
                             <div class="type-title-sm">Points when completed</div>
                             <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
                         </li>
