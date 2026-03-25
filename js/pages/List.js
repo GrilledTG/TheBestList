@@ -115,54 +115,44 @@ export default {
           <h1>{{ selectedLevel.name }}</h1>
           <LevelAuthors :author="selectedLevel.author" :creators="selectedLevel.creators" :verifier="selectedLevel.verifier"></LevelAuthors>
           <iframe class="video" :src="embed(selectedLevel.showcase || selectedLevel.verification)" frameborder="0"></iframe>
-
-          <ul class="stats">
-            <li>
-              <div class="type-title-sm">Points when completed</div>
-              <p>{{ score(getOriginalRank(selectedLevel), 100, selectedLevel.percentToQualify) }}</p>
-            </li>
-            <li>
-              <div class="type-title-sm">ID</div>
-              <p>{{ selectedLevel.id }}</p>
-            </li>
-            <li>
-              <div class="type-title-sm">FPS</div>
-              <p>{{ selectedLevel.fps || 'Any' }}</p>
-            </li>
-            <li>
-              <div class="type-title-sm">Version</div>
-              <p>{{ selectedLevel.version || 'Any' }}</p>
-            </li>
-            <li>
-              <div class="type-title-sm">Alternating</div>
-              <p>{{ selectedLevel.alternating || 'No' }}</p>
-            </li>
-          </ul>
-
-          <h2>Records</h2>
-          <p v-if="selectedIndexInFullList <= 100">
-            <strong>{{ selectedLevel.percentToQualify }}%</strong> to qualify
-          </p>
-          <p v-else-if="selectedIndexInFullList <= 150">
-            <strong>100%</strong> to qualify
-          </p>
-          <p v-else>This level does not accept new records.</p>
-
-          <table class="records">
-            <tr v-for="record in selectedLevel.records" class="record">
-              <td class="percent">
-                <p>{{ record.percent }}%</p>
-              </td>
-              <td class="user">
-                <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
-              </td>
-              <td class="mobile">
-                <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`">
-              </td>
-              <td class="hz">
-                <p>{{ record.hz }}</p>
-              </td>
-            </tr>
+         <ul class="stats">
+                        <li>
+                            <div class="type-title-sm">Points when completed</div>
+                            <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
+                        </li>
+                        <li>
+                            <div class="type-title-sm">ID</div>
+                            <p>{{ level.id }}</p>
+                        </li>
+                        <li>
+                            <div class="type-title-sm">FPS</div>
+                            <p>{{ level.fps || 'Any' }}</p>
+                        </li>
+                    </ul>
+                    <h2>Records</h2>
+                    <p v-if="selected + 1 <= 150"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
+                    <p v-else-if="selected +1 <= 150"><strong>100%</strong> or better to qualify</p>
+                    <p v-else>This level does not accept new records.</p>
+                    <p><strong>Handcam is {{['not needed', 'recommended', 'necessary'][level.handcam]}} for this level.</strong></p>
+                    <p><strong>Device: {{level.device}}.</strong></p>
+                    <table class="records">
+                        <tr v-for="record in level.records" class="record">
+                            <td class="percent">
+                                <p>{{ record.percent }}%</p>
+                            </td>
+                            <td class="user">
+                                <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
+                            </td>
+                            <td class="mobile">
+                                <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
+                            </td>
+                             <td class="nuc">
+                                <img v-if="record.nuc" :src="\`/assets/mf.svg\`" alt="mf">
+                            </td>
+                            <td class="hz">
+                                <p>{{ record.hz }}</p>
+                            </td>
+                        </tr>
           </table>
         </div>
       </div>
