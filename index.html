@@ -33,8 +33,12 @@
 <body id="app">
 
     <audio id="bg-audio" loop>
-=        <source src="/chaos_degraded_4000Hz.mp3" type="audio/mpeg">
+    <source src="/chaos.mp3" type="audio/mpeg">
     </audio>
+
+    <button id="play-audio-btn" style="position:fixed;bottom:20px;left:20px;z-index:9999;">
+        Play Music
+    </button>
 
     <header :class="{ dark: store.dark }">
         <div class="logo">
