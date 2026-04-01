@@ -165,8 +165,7 @@ export default {
 
           <div class="og">
             <p class="type-label-md">
-              Website layout made by
-              <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a>
+              This is our website and if you don't abide by our rules, then fuck you.
             </p>
           </div>
 
