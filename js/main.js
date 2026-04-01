@@ -19,3 +19,18 @@ const router = VueRouter.createRouter({
 app.use(router);
 
 app.mount('#app');
+
+window.addEventListener("click", () => {
+    const audio = document.getElementById("bg-audio");
+    if (!audio) {
+        console.warn("Audio element not found");
+        return;
+    }
+
+    audio.volume = 0.35;
+
+    audio.play()
+        .then(() => console.log("Audio playing"))
+        .catch(err => console.error("Audio failed:", err));
+
+}, { once: true });

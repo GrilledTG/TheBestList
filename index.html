@@ -32,10 +32,8 @@
 
 <body id="app">
 
-    <!-- 🔊 Background Audio -->
     <audio id="bg-audio" loop>
-        <!-- 🔥 CHANGE TO MP3 IF WAV FAILS -->
-        <source src="/chaos.mp3" type="audio/mpeg">
+=        <source src="/chaos.mp3" type="audio/mpeg">
     </audio>
 
     <header :class="{ dark: store.dark }">
@@ -86,15 +84,5 @@
     <router-view :class="{ dark: store.dark }"></router-view>
 
 </body>
-
-<script>
-window.addEventListener("click", () => {
-    const audio = document.getElementById("bg-audio");
-    if (audio) {
-        audio.volume = 0.35;
-        audio.play().catch(err => console.error("Audio failed:", err));
-    }
-}, { once: true });
-</script>
 
 </html>
