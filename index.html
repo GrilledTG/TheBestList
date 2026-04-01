@@ -37,9 +37,17 @@
         <script type="module" src="/js/main.js"></script>
     </head>
     <body id="app">
-        <audio autoplay loop>
-            <source src="chaos_degraded_4000Hz.wav" type="audio/wav">
+        <audio id="bg-audio" loop>
+            <source src="your-audio-file.wav" type="audio/wav">
         </audio>
+
+        <button onclick="playAudio()">Play</button>
+
+        <script>
+            function playAudio() {
+             document.getElementById("bg-audio").play();
+            }
+        </script>
         <header :class="{ dark: store.dark }">
             <div class="logo">
                 <h2>TBL</h2>
