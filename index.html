@@ -41,12 +41,13 @@
             <source src="chaos_degraded_4000Hz.wav" type="audio/wav">
         </audio>
 
-        <button onclick="playAudio()">Play</button>
-
         <script>
-            function playAudio() {
-             document.getElementById("bg-audio").play();
-            }
+             document.addEventListener("click", function () {
+                const audio = document.getElementById("bg-audio");
+                audio.volume = 0.4;
+                audio.play();
+            }, { once: true });
+        </script>
         </script>
         <header :class="{ dark: store.dark }">
             <div class="logo">
